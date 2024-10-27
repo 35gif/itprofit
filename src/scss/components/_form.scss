@@ -1,0 +1,75 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+@mixin form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.feedback-form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+
+    &.error {
+      border-color: $error-color;
+    }
+  }
+
+  .error-message {
+    color: $error-color;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  .success-message {
+    color: $success-color;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  button[type="submit"] {
+    @include button;
+  }
+
+  .status-message {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+
+    &.success {
+      background-color: $success-color;
+      color: white;
+    }
+
+    &.error {
+      background-color: $error-color;
+      color: white;
+    }
+  }
+
+  input.error,
+  textarea.error {
+    border-color: $error-color;
+  }
+}

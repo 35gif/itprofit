@@ -1,0 +1,20 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.article {
+  margin: 2rem 0;
+
+  .article-content {
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+
+    &.collapsed {
+      max-height: 100px;
+    }
+  }
+
+  .toggle-article {
+    @include button;
+    margin-top: 1rem;
+  }
+}
