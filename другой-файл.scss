@@ -1,0 +1,7 @@
+@use 'components/form' as *;
+
+// Теперь вы можете использовать миксин
+.some-element {
+  @include form-input;
+}
+
